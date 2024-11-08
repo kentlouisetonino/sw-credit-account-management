@@ -7,6 +7,7 @@
 package src;
 
 import java.util.Scanner;
+
 import src.libs.CreditAccount;
 import src.libs.Description;
 import src.libs.Helper;
@@ -24,6 +25,10 @@ public class App {
 
         // Show main app description.
         Description.main();
+        Helper.addNewline();
+
+        // Show the options.
+        Description.options();
         Helper.addNewline();
     }
 }
