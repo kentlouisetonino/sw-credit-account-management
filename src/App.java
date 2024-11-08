@@ -7,8 +7,7 @@
 package src;
 
 import java.util.Scanner;
-
-import src.libs.CreditAccount;
+import src.libs.Color;
 import src.libs.Description;
 import src.libs.Helper;
 
@@ -16,19 +15,33 @@ public class App {
 
     public static void main(String[] args) {
         Scanner mainOptionSc = new Scanner(System.in);
-        CreditAccount.hello();
+        int mainOption;
+        boolean invalidMainInput = false;
 
-        // Clear the screen.
-        Helper.clearTerminal();
-        Helper.addNewline();
-        Helper.addNewline();
+        while (true) {
+            // Clear the screen.
+            Helper.clearTerminal();
+            Helper.addNewline();
+            Helper.addNewline();
 
-        // Show main app description.
-        Description.main();
-        Helper.addNewline();
+            // Show main app description.
+            Description.main();
+            Helper.addNewline();
 
-        // Show the options.
-        Description.options();
-        Helper.addNewline();
+            // Show the options.
+            Description.options();
+            Helper.addNewline();
+            Helper.addNewline();
+
+            // Ask the input.
+            try {
+                System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
+                mainOption = mainOptionSc.nextInt();
+            } catch (Exception e) {
+                invalidMainInput = true;
+                mainOptionSc.next();
+                continue;
+            }
+        }
     }
 }

@@ -2,16 +2,12 @@ package src.libs;
 
 public class Description {
 
-    static String blue = "\033[34m";
-    static String green = "\033[32m";
-    static String reset = "\033[0m";
-
     public static void main() {
-        System.out.println(blue + "\t----------------------------------------------" + reset);
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
         Helper.addNewline();
-        System.out.println(green + "\t\tCredit Account Management App" + reset);
+        System.out.println(Color.green + "\t\tCredit Account Management App" + Color.reset);
         Helper.addNewline();
-        System.out.println(blue + "\t----------------------------------------------" + reset);
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
     }
 
     public static void options() {
