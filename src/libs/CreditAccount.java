@@ -7,7 +7,7 @@ public class CreditAccount {
     public double annualIncome;
     public double creditLimit;
 
-    public CreditAccount(int id, String name, double annualIncome, double creditLimit) {
+    public CreditAccount(int id, String name, double annualIncome) {
         this.id = id;
         this.name = name;
         this.annualIncome = annualIncome;

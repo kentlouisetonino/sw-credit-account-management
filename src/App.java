@@ -18,9 +18,9 @@ import src.libs.Input;
 public class App {
 
     public static void main(String[] args) {
-        Scanner mainOptionSc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         ArrayList<CreditAccount> accounts = new ArrayList<>();
-        int mainOption = 0;
+        int mainOption;
         boolean invalidMainInput = false;
 
         while (true) {
@@ -29,7 +29,13 @@ public class App {
             Helper.addNewline();
             Helper.addNewline();
 
-            System.out.println(mainOption);
+            for (CreditAccount account : accounts) {
+                System.out.println("ID: " + account.getId());
+                System.out.println("Name: " + account.getName());
+                System.out.println("Annual Income: " + account.getAnnualIncome());
+                System.out.println("Credit Limit: " + account.getCreditLimit());
+                System.out.println("---------------------------------");
+            }
 
             // Show main app description.
             Description.main();
@@ -48,20 +54,28 @@ public class App {
             // Handle the input.
             try {
                 System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
-                mainOption = mainOptionSc.nextInt();
+                mainOption = sc.nextInt();
+                sc.nextLine();
                 invalidMainInput = false;
             } catch (Exception e) {
                 invalidMainInput = true;
-                mainOptionSc.next();
+                sc = new Scanner(System.in);
                 continue;
             }
 
             if (mainOption == 1) {
-                Input.option1();
-                break;
+                CreditAccount newCreditAccount = Input.option1();
+                accounts.add(newCreditAccount);
+                continue;
             }
 
+            break;
         }
 
+        try {
+            sc.close();
+        } catch (Exception e) {
+            System.exit(0);
+        }
     }
 }
