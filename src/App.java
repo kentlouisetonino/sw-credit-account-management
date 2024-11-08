@@ -8,6 +8,7 @@ package src;
 
 import java.util.Scanner;
 import src.libs.CreditAccount;
+import src.libs.Description;
 import src.libs.Helper;
 
 public class App {
@@ -19,6 +20,10 @@ public class App {
         // Clear the screen.
         Helper.clearTerminal();
         Helper.addNewline();
+        Helper.addNewline();
+
+        // Show main app description.
+        Description.main();
         Helper.addNewline();
     }
 }
