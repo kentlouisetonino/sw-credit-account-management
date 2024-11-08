@@ -38,8 +38,4 @@ public class CreditAccount {
     public double getCreditLimit() {
         return this.creditLimit;
     }
-
-    public static void hello() {
-        System.out.println("Hello");
-    }
 }

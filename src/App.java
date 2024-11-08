@@ -6,17 +6,20 @@
  */
 package src;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
 import src.libs.Color;
+import src.libs.CreditAccount;
 import src.libs.Description;
 import src.libs.Error;
 import src.libs.Helper;
+import src.libs.Input;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner mainOptionSc = new Scanner(System.in);
+        ArrayList<CreditAccount> accounts = new ArrayList<>();
         int mainOption = 0;
         boolean invalidMainInput = false;
 
@@ -54,10 +57,7 @@ public class App {
             }
 
             if (mainOption == 1) {
-                Helper.clearTerminal();
-                Helper.addNewline();
-                Helper.addNewline();
-                Description.option1();
+                Input.option1();
                 break;
             }
 
