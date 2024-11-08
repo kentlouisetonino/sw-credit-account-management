@@ -11,7 +11,7 @@ public class Description {
     }
 
     public static void options() {
-        System.out.println("\t[ 1 ] New Account");
+        System.out.println("\t[ 1 ] Create Account");
         System.out.println("\t[ 2 ] Credit Inquiry");
         System.out.println("\t[ 3 ] Purchase");
         System.out.println("\t[ 4 ] Payment");
