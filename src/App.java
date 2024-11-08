@@ -1,9 +1,3 @@
-/**
- * Author: Kent Louise G. Tonino
- * Program: Bachelor of Science, Computer Engineering
- * Student #: 2022-0076767
- * Course: CS6203 - Object Oriented Programming
- */
 package src;
 
 import java.util.ArrayList;
