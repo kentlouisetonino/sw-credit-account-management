@@ -9,7 +9,7 @@
 
 ## Setup
 
-> - This is uses the `Java v21`.
+> - This project uses `Java v21`.
 
 > - Change the permission of shell file.
 
