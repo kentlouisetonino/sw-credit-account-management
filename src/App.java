@@ -7,6 +7,7 @@
 package src;
 
 import java.util.Scanner;
+
 import src.libs.Color;
 import src.libs.Description;
 import src.libs.Error;
@@ -16,7 +17,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner mainOptionSc = new Scanner(System.in);
-        int mainOption;
+        int mainOption = 0;
         boolean invalidMainInput = false;
 
         while (true) {
@@ -24,6 +25,8 @@ public class App {
             Helper.clearTerminal();
             Helper.addNewline();
             Helper.addNewline();
+
+            System.out.println(mainOption);
 
             // Show main app description.
             Description.main();
@@ -50,7 +53,14 @@ public class App {
                 continue;
             }
 
-            System.out.println(mainOption);
+            if (mainOption == 1) {
+                Helper.clearTerminal();
+                Helper.addNewline();
+                Helper.addNewline();
+                Description.option1();
+                break;
+            }
+
         }
 
     }

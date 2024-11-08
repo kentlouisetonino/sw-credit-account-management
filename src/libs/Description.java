@@ -18,4 +18,12 @@ public class Description {
         System.out.println("\t[ 5 ] Close Account");
         System.out.println("\t[ 6 ] Exit");
     }
+
+    public static void option1() {
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.green + "\t\t\tCreate Account" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+    }
 }
