@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class Input {
 
-    public static CreditAccount option1() {
-        Scanner sc = new Scanner(System.in);
+    public static CreditAccount option1(Scanner sc) {
         boolean invalidAnnualIncome = false;
 
         // For generating random number.
@@ -62,13 +61,6 @@ public class Input {
 
         // Create the credit account.
         CreditAccount newAccount = new CreditAccount(accountNumber, name, annualIncome);
-
-        try {
-            sc.close();
-        } catch (Exception e) {
-            return newAccount;
-        }
-
         return newAccount;
     }
 }

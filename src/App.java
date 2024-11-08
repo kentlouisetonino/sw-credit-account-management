@@ -24,48 +24,49 @@ public class App {
         boolean invalidMainInput = false;
 
         while (true) {
-            // Clear the screen.
-            Helper.clearTerminal();
-            Helper.addNewline();
-            Helper.addNewline();
 
-            for (CreditAccount account : accounts) {
-                System.out.println("ID: " + account.getId());
-                System.out.println("Name: " + account.getName());
-                System.out.println("Annual Income: " + account.getAnnualIncome());
-                System.out.println("Credit Limit: " + account.getCreditLimit());
-                System.out.println("---------------------------------");
-            }
-
-            // Show main app description.
-            Description.main();
-            Helper.addNewline();
-
-            // Show error message for invalid input.
-            if (invalidMainInput) {
-                Error.invalidMainInput();
-                Helper.addNewline();
-            }
-
-            // Show the options.
-            Description.options();
-            Helper.addNewline();
-
-            // Handle the input.
             try {
+                // Clear the screen.
+                Helper.clearTerminal();
+                Helper.addNewline();
+                Helper.addNewline();
+
+                for (CreditAccount account : accounts) {
+                    System.out.println("ID: " + account.getId());
+                    System.out.println("Name: " + account.getName());
+                    System.out.println("Annual Income: " + account.getAnnualIncome());
+                    System.out.println("Credit Limit: " + account.getCreditLimit());
+                    System.out.println("---------------------------------");
+                }
+
+                // Show main app description.
+                Description.main();
+                Helper.addNewline();
+
+                // Show error message for invalid input.
+                if (invalidMainInput) {
+                    Error.invalidMainInput();
+                    Helper.addNewline();
+                }
+
+                // Show the options.
+                Description.options();
+                Helper.addNewline();
+
                 System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
                 mainOption = sc.nextInt();
                 sc.nextLine();
                 invalidMainInput = false;
             } catch (Exception e) {
                 invalidMainInput = true;
-                sc = new Scanner(System.in);
+                sc.nextLine();
                 continue;
             }
 
             if (mainOption == 1) {
-                CreditAccount newCreditAccount = Input.option1();
+                CreditAccount newCreditAccount = Input.option1(sc);
                 accounts.add(newCreditAccount);
+                sc.nextLine();
                 continue;
             }
 
