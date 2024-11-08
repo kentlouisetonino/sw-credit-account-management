@@ -9,6 +9,7 @@ public class Helper {
             String os = System.getProperty("os.name").toLowerCase();
 
             if (os.contains("windows")) {
+                // For Windows machine..
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             } else {
                 // For Linux, macOS, and other Unix-like systems.
@@ -20,7 +21,6 @@ public class Helper {
         }
     }
 
-    // Method to add a new line.
     public static void addNewline() {
         System.out.println();
     }

@@ -9,6 +9,7 @@ package src;
 import java.util.Scanner;
 import src.libs.Color;
 import src.libs.Description;
+import src.libs.Error;
 import src.libs.Helper;
 
 public class App {
@@ -30,7 +31,7 @@ public class App {
 
             // Show error message for invalid input.
             if (invalidMainInput) {
-                System.out.println(Color.red + "\tInvalid input. Please try again." + Color.reset);
+                Error.invalidMainInput();
                 Helper.addNewline();
             }
 
@@ -38,7 +39,7 @@ public class App {
             Description.options();
             Helper.addNewline();
 
-            // Ask the input.
+            // Handle the input.
             try {
                 System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
                 mainOption = mainOptionSc.nextInt();
@@ -51,5 +52,6 @@ public class App {
 
             System.out.println(mainOption);
         }
+
     }
 }
