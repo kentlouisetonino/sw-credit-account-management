@@ -28,6 +28,12 @@ public class App {
             Description.main();
             Helper.addNewline();
 
+            // Show error message for invalid input.
+            if (invalidMainInput) {
+                System.out.println(Color.red + "\tInvalid input. Please try again." + Color.reset);
+                Helper.addNewline();
+            }
+
             // Show the options.
             Description.options();
             Helper.addNewline();
@@ -36,11 +42,14 @@ public class App {
             try {
                 System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
                 mainOption = mainOptionSc.nextInt();
+                invalidMainInput = false;
             } catch (Exception e) {
                 invalidMainInput = true;
                 mainOptionSc.next();
                 continue;
             }
+
+            System.out.println(mainOption);
         }
     }
 }
