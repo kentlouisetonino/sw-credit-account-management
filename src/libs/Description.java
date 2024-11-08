@@ -19,6 +19,10 @@ public class Description {
         System.out.println("\t[ 6 ] Exit");
     }
 
+    public static void chooseOption() {
+        System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
+    }
+
     public static void option1() {
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
         Helper.addNewline();

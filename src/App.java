@@ -8,7 +8,6 @@ package src;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import src.libs.Color;
 import src.libs.CreditAccount;
 import src.libs.Description;
 import src.libs.Error;
@@ -53,7 +52,8 @@ public class App {
                 Description.options();
                 Helper.addNewline();
 
-                System.out.print(Color.yellow + "\tChoose an option" + Color.reset + ": ");
+                // Handle the user option.
+                Description.chooseOption();
                 mainOption = sc.nextInt();
                 sc.nextLine();
                 invalidMainInput = false;
