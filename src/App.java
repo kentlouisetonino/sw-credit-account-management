@@ -31,7 +31,6 @@ public class App {
             // Show the options.
             Description.options();
             Helper.addNewline();
-            Helper.addNewline();
 
             // Ask the input.
             try {
