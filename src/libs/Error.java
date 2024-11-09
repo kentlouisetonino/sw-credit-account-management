@@ -17,4 +17,8 @@ public class Error {
     public static void invalidPurchaseAmount() {
         System.out.println(Color.red + "\tInvalid purchase amount. Please try again." + Color.reset);
     }
+
+    public static void invalidPaymentAmount() {
+        System.out.println(Color.red + "\tInvalid purchase amount. Please try again." + Color.reset);
+    }
 }

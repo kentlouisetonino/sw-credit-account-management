@@ -78,6 +78,12 @@ public class App {
                 continue;
             }
 
+            if (mainOption == 4) {
+                Input.option4(sc, accounts);
+                sc.nextLine();
+                continue;
+            }
+
             if (mainOption == 6) {
                 Helper.clearTerminal();
                 break;
