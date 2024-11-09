@@ -250,7 +250,7 @@ public class Input {
                 Helper.addNewline();
 
                 // Show the option description.
-                Description.option3();
+                Description.option4();
                 Helper.addNewline();
 
                 // Show error message for invalid account number.
@@ -308,6 +308,87 @@ public class Input {
                 // Display account information.
                 System.out.println("\tUpdated Credit Balance: " + account.getCreditBalance());
                 System.out.println("\tUpdated Allowable Purchase Amount: " + account.getPurchaseAmount());
+
+                // Ask if want to check another account.
+                Helper.addNewline();
+                System.out.print(Color.yellow + "\tCheck different account (y/n)" + Color.reset + ": ");
+                tryAgain = sc.next();
+
+                // Handle the response.
+                if (tryAgain.contains("y")) {
+                    invalidAccountNumber = false;
+                    account = null;
+                    sc.nextLine();
+                    continue;
+                }
+            } catch (Exception e) {
+                invalidAccountNumber = true;
+                sc.nextLine();
+                continue;
+            }
+
+            break;
+        }
+    }
+
+    public static void option5(Scanner sc, ArrayList<CreditAccount> accounts) {
+        boolean invalidAccountNumber = false;
+        boolean invalidDeletion = false;
+        int accountNumber;
+        CreditAccount account = null;
+        String tryAgain;
+
+        while (true) {
+            try {
+                // Clear the screen.
+                Helper.clearTerminal();
+                Helper.addNewline();
+                Helper.addNewline();
+
+                // Show the option description.
+                Description.option5();
+                Helper.addNewline();
+
+                // Show error message for invalid account number.
+                if (invalidAccountNumber) {
+                    Error.invalidAccountNumber();
+                    Helper.addNewline();
+                }
+
+                // Show error message for invalid payment amount.
+                if (invalidDeletion) {
+                    Error.invalidDeletion();
+                    Helper.addNewline();
+                }
+
+                // Handle the account number.
+                System.out.print(Color.yellow + "\tEnter Account Number" + Color.reset + ": ");
+                accountNumber = sc.nextInt();
+
+                // Check the account.
+                for (int i = 0; i < accounts.size(); i++) {
+                    if (accounts.get(i).getId() == accountNumber) {
+                        account = accounts.get(i);
+                    }
+                }
+
+                // Check if savings account is null.
+                if (account == null) {
+                    invalidAccountNumber = true;
+                    invalidDeletion = false;
+                    sc.nextLine();
+                    continue;
+                }
+
+                if (account.getCreditBalance() > 0) {
+                    invalidAccountNumber = false;
+                    invalidDeletion = true;
+                    sc.nextLine();
+                    continue;
+                }
+
+                // Display account information.
+                System.out.println("\tSuccessfully deleted account with ID: " + account.getId());
 
                 // Ask if want to check another account.
                 Helper.addNewline();

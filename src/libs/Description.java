@@ -43,7 +43,7 @@ public class Description {
     public static void option3() {
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
         Helper.addNewline();
-        System.out.println(Color.green + "\t\t\t   Purchase" + Color.reset);
+        System.out.println(Color.green + "\t\t\tPurchase Item" + Color.reset);
         Helper.addNewline();
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
     }
@@ -51,7 +51,15 @@ public class Description {
     public static void option4() {
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
         Helper.addNewline();
-        System.out.println(Color.green + "\t\t\t    Payment" + Color.reset);
+        System.out.println(Color.green + "\t\t\tPay Credit Balance" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+    }
+
+    public static void option5() {
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.green + "\t\t\tDelete Account" + Color.reset);
         Helper.addNewline();
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
     }
