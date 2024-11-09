@@ -10,6 +10,12 @@ Program: Bachelor of Science, Computer Engineering
 Student #: 2022-0076767
 ```
 
+> - Video presentation.
+
+```plaintext
+https://drive.google.com/file/d/1l887qFqDUQ0c4U8MzC27vU67olRyUivU/view?usp=sharing
+```
+
 <br />
 <br />
 
