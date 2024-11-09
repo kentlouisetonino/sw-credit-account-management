@@ -6,11 +6,15 @@ public class CreditAccount {
     public String name;
     public double annualIncome;
     public double creditLimit;
+    public double creditBalance;
+    public double purchaseAmount;
 
     public CreditAccount(int id, String name, double annualIncome) {
         this.id = id;
         this.name = name;
         this.annualIncome = annualIncome;
+        this.creditBalance = 0;
+        this.purchaseAmount = 0;
 
         if (annualIncome >= 200000 && annualIncome <= 300000) {
             this.creditLimit = 30000;

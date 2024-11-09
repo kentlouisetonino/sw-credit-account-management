@@ -29,6 +29,8 @@ public class App {
                     System.out.println("Name: " + account.getName());
                     System.out.println("Annual Income: " + account.getAnnualIncome());
                     System.out.println("Credit Limit: " + account.getCreditLimit());
+                    System.out.println("Credit Balance: " + account.creditBalance);
+                    System.out.println("Purchase Amount: " + account.purchaseAmount);
                     System.out.println("---------------------------------");
                 }
 
