@@ -24,16 +24,6 @@ public class App {
                 Helper.addNewline();
                 Helper.addNewline();
 
-                for (CreditAccount account : accounts) {
-                    System.out.println("ID: " + account.getId());
-                    System.out.println("Name: " + account.getName());
-                    System.out.println("Annual Income: " + account.getAnnualIncome());
-                    System.out.println("Credit Limit: " + account.getCreditLimit());
-                    System.out.println("Credit Balance: " + account.getCreditBalance());
-                    System.out.println("Purchase Amount: " + account.getPurchaseAmount());
-                    System.out.println("---------------------------------");
-                }
-
                 // Show main app description.
                 Description.main();
                 Helper.addNewline();
@@ -80,6 +70,12 @@ public class App {
 
             if (mainOption == 4) {
                 Input.option4(sc, accounts);
+                sc.nextLine();
+                continue;
+            }
+
+            if (mainOption == 5) {
+                Input.option5(sc, accounts);
                 sc.nextLine();
                 continue;
             }
