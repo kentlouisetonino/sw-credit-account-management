@@ -29,8 +29,8 @@ public class App {
                     System.out.println("Name: " + account.getName());
                     System.out.println("Annual Income: " + account.getAnnualIncome());
                     System.out.println("Credit Limit: " + account.getCreditLimit());
-                    System.out.println("Credit Balance: " + account.creditBalance);
-                    System.out.println("Purchase Amount: " + account.purchaseAmount);
+                    System.out.println("Credit Balance: " + account.getCreditBalance());
+                    System.out.println("Purchase Amount: " + account.getPurchaseAmount());
                     System.out.println("---------------------------------");
                 }
 
@@ -68,6 +68,12 @@ public class App {
 
             if (mainOption == 2) {
                 Input.option2(sc, accounts);
+                sc.nextLine();
+                continue;
+            }
+
+            if (mainOption == 3) {
+                Input.option3(sc, accounts);
                 sc.nextLine();
                 continue;
             }

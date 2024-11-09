@@ -43,4 +43,20 @@ public class CreditAccount {
     public double getCreditLimit() {
         return this.creditLimit;
     }
+
+    public double getCreditBalance() {
+        return this.creditBalance;
+    }
+
+    public double getPurchaseAmount() {
+        return this.purchaseAmount;
+    }
+
+    public void setCreditBalance(double newCreditBalance) {
+        this.creditBalance = newCreditBalance;
+    }
+
+    public void setPurchaseAmount(double newPurchaseAmount) {
+        this.purchaseAmount = newPurchaseAmount;
+    }
 }

@@ -39,4 +39,12 @@ public class Description {
         Helper.addNewline();
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
     }
+
+    public static void option3() {
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.green + "\t\t\t   Purchase" + Color.reset);
+        Helper.addNewline();
+        System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
+    }
 }
