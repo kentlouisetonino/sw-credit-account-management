@@ -65,17 +65,11 @@ public class Input {
         return newAccount;
     }
 
-    public static CreditAccount option2(Scanner sc, ArrayList<CreditAccount> accounts) {
-        boolean invalidAnnualIncome = false;
-
-        // For generating random number.
-        Random random = new Random();
-        String generateNumber = String.format("%04d", random.nextInt(10000));
-
-        // Variables needed to create the credit account.
-        String name;
-        double annualIncome;
-        int accountNumber = Integer.parseInt(generateNumber);
+    public static void option2(Scanner sc, ArrayList<CreditAccount> accounts) {
+        boolean invalidAccountNumber = false;
+        int accountNumber;
+        CreditAccount account = null;
+        String tryAgain;
 
         while (true) {
             try {
@@ -85,42 +79,59 @@ public class Input {
                 Helper.addNewline();
 
                 // Show the option description.
-                Description.option1();
+                Description.option2();
                 Helper.addNewline();
 
                 // Show error message for invalid annual income.
-                if (invalidAnnualIncome) {
-                    Error.invalidAnnualIncome();
+                if (invalidAccountNumber) {
+                    Error.invalidAccountNumber();
                     Helper.addNewline();
                 }
 
                 // Show the generated account number.
-                System.out.println("\tAccount Number: " + generateNumber);
+                System.out.print(Color.yellow + "\tEnter Account Number" + Color.reset + ": ");
+                accountNumber = sc.nextInt();
 
-                // Ask user to input the account name.
-                System.out.print("\tAccount Name: ");
-                name = sc.nextLine();
+                // Check the account.
+                for (int i = 0; i < accounts.size(); i++) {
+                    if (accounts.get(i).getId() == accountNumber) {
+                        account = accounts.get(i);
+                    }
+                }
 
-                // Ask user to input the annual income.
-                System.out.print("\tAnnual Income: ");
-                annualIncome = sc.nextDouble();
+                // Check if savings account is null.
+                if (account == null) {
+                    invalidAccountNumber = true;
+                    sc.nextLine();
+                    continue;
+                }
 
-                if (annualIncome < 1) {
-                    invalidAnnualIncome = true;
+                // Display account information.
+                System.out.println("\tName: " + account.getName());
+                System.out.println("\tAnnual Income: " + account.getAnnualIncome());
+                System.out.println("\tCredit Limit: " + account.getCreditLimit());
+                System.out.println("\tCredit Balance: " + account.creditBalance);
+                System.out.println("\tAllowable Purchase Amount: " + account.purchaseAmount);
+
+                // Ask if want to check another account.
+                Helper.addNewline();
+                System.out.print(Color.yellow + "\tCheck different account (y/n)" + Color.reset + ": ");
+                tryAgain = sc.next();
+
+                // Handle the response.
+                if (tryAgain.contains("y")) {
+                    invalidAccountNumber = false;
+                    account = null;
                     sc.nextLine();
                     continue;
                 }
             } catch (Exception e) {
-                invalidAnnualIncome = true;
+                invalidAccountNumber = true;
                 sc.nextLine();
                 continue;
             }
 
             break;
         }
-
-        // Create the credit account.
-        CreditAccount newAccount = new CreditAccount(accountNumber, name, annualIncome);
-        return newAccount;
     }
 }

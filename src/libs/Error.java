@@ -9,4 +9,8 @@ public class Error {
     public static void invalidAnnualIncome() {
         System.out.println(Color.red + "\tInvalid annual income. Please try again." + Color.reset);
     }
+
+    public static void invalidAccountNumber() {
+        System.out.println(Color.red + "\tInvalid account number. Please try again." + Color.reset);
+    }
 }

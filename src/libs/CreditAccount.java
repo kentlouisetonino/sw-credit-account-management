@@ -13,8 +13,6 @@ public class CreditAccount {
         this.id = id;
         this.name = name;
         this.annualIncome = annualIncome;
-        this.creditBalance = 0;
-        this.purchaseAmount = 0;
 
         if (annualIncome >= 200000 && annualIncome <= 300000) {
             this.creditLimit = 30000;
@@ -25,6 +23,9 @@ public class CreditAccount {
         } else {
             this.creditLimit = 0;
         }
+
+        this.creditBalance = 0;
+        this.purchaseAmount = this.creditLimit - this.creditBalance;
     }
 
     public int getId() {
