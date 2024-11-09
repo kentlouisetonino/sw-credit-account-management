@@ -7,6 +7,7 @@ public class Description {
         Helper.addNewline();
         System.out.println(Color.green + "\t\tCredit Account Management App" + Color.reset);
         Helper.addNewline();
+        System.out.println("\t\t(Author: Kent Louise Tonino)");
         System.out.println(Color.blue + "\t----------------------------------------------" + Color.reset);
     }
 
