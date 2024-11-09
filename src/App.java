@@ -64,6 +64,16 @@ public class App {
                 continue;
             }
 
+            if (mainOption == 6) {
+                Helper.clearTerminal();
+                break;
+            }
+
+            if (mainOption > 6 || mainOption < 1) {
+                invalidMainInput = true;
+                continue;
+            }
+
             break;
         }
 
