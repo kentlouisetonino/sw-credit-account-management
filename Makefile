@@ -4,7 +4,7 @@ remove:
 compile:
 	javac -d bin src/App.java
 
-app:
+run:
 	make remove
 	make compile
 	java -cp bin src.App
